@@ -8,7 +8,7 @@
 対象データの確証度を出力する。データ群のうち実験的確証があるものがどの程度なのかを算出するために用いた。
 
 ## comp2.pl
-疎水性値からTMR残基の
-
+疎水性値からTMR残基の確証度を独自に選定。疎水性値にはKDインデックスを用いた。comp2.plを用いて出力されたfastaファイルはCD-HIT(http://weizhong-lab.ucsd.edu/cdhit-web-server/cgi-bin/index.cgi)を通して冗長性をなくす。
 
 ## comp3.pl
+冗長性が排されたfastaファイルを整形し、出力する。
