@@ -112,5 +112,7 @@ while(<SWISS>){
 		$pm=0;
 		$gol=0;
 		$er=0;
+		$ftevi="";
+		$FTeco=0;
 	}
 }
