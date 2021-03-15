@@ -223,7 +223,6 @@ while(<SWISS>){
 						else{$sceco=1;}
 					}
 				}
-				printf $swissid."\n";
 				printf WRITE ">".$swissid.",".$t2eco.",".$pmeco.",".$goleco.",".$ereco.",".$nueco.",".$mteco.",".$rafteco.",".$caeco.",".$sceco."\n";
 				printf WRITE $swisssq . "\n" ;
 			}
