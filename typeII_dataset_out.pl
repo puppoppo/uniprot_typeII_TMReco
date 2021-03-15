@@ -32,7 +32,7 @@ while(<SWISS>){
 
 	elsif($_ =~ /^CC   -!- SUBCELLULAR LOCATION/){
 	$suswitch = 1;
-	$swisssu .= substr($_,30,100);
+	$swisssu .= substr($_,9,100);
 	}
 	elsif($_ =~ /^CC   -!-|CC   ---/){
 		$suswitch = 0;
@@ -80,6 +80,10 @@ while(<SWISS>){
 					if($su[$i] =~ /Note/){
 						$note=1;
 					}
+					if($su[$i] =~ /SUBCELLULAR LOCATION/){
+						$note=0;
+					}
+
 					if($note==0 && $su[$i] =~ /type II |typeII /){
 						if($su[$i] =~ /ECO:0000269/){$t2eco=269;}
 						elsif($su[$i] =~ /ECO:0000303/){$t2eco=303;}
@@ -219,6 +223,7 @@ while(<SWISS>){
 						else{$sceco=1;}
 					}
 				}
+				printf $swissid."\n";
 				printf WRITE ">".$swissid.",".$t2eco.",".$pmeco.",".$goleco.",".$ereco.",".$nueco.",".$mteco.",".$rafteco.",".$caeco.",".$sceco."\n";
 				printf WRITE $swisssq . "\n" ;
 			}
