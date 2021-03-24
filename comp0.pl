@@ -78,7 +78,7 @@ while(<SWISS>){
 		$swissoc = "";
 		$suswitch = 0;
 		$ftnumber = 0;
-    $swisssu = "";
+    	$swisssu = "";
 		$swisssq = "";
 		$TMR = "";
 		$TMRstart = 0;
