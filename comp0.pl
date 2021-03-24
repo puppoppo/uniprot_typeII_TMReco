@@ -83,5 +83,9 @@ while(<SWISS>){
 		$TMR = "";
 		$TMRstart = 0;
 		$TMRend = 0;
+		$length=0;
+		$pm=0;
+		$gol=0;
+		$er=0;
 	}
 }
