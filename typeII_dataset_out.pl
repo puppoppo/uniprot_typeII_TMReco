@@ -256,6 +256,7 @@ while(<SWISS>){
 		$sceco=0;
 		$TMRstart=0;
 		$TMRend=0;
+		$ftevi="";
 	}
 }
 
