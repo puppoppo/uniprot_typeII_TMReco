@@ -1,5 +1,5 @@
 
-open(SWISS, "uniprot_sprot.dat");
+open(SWISS, "typeII.dat");
 open(WRITE,">dataset.csv");
 
 $, = ",";
@@ -222,8 +222,9 @@ while(<SWISS>){
 						elsif($su[$i] =~ /ECO:0000213/){$sceco=213;}
 						else{$sceco=1;}
 					}
+					if($swisssu =~ /isoform|Isoform/){$iso=1;}
 				}
-				printf WRITE ">".$swissid.",".$t2eco.",".$pmeco.",".$goleco.",".$ereco.",".$nueco.",".$mteco.",".$rafteco.",".$caeco.",".$sceco."\n";
+				printf WRITE ">".$swissid.",".$t2eco.",".$pmeco.",".$goleco.",".$ereco.",".$nueco.",".$mteco.",".$rafteco.",".$caeco.",".$sceco.",".$iso."\n";
 				printf WRITE $swisssq . "\n" ;
 			}
 		}
@@ -257,6 +258,7 @@ while(<SWISS>){
 		$TMRstart=0;
 		$TMRend=0;
 		$ftevi="";
+		$iso=0;
 	}
 }
 
