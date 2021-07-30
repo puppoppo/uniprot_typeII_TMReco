@@ -27,3 +27,6 @@ goleco=0
 ## ner
 
 ereco=0
+
+
+# csvファイルをcut-off率98％で冗長性排除しfastaファイルを作成
