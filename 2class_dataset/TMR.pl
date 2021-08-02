@@ -1,6 +1,6 @@
 
-open(fasta, ".fasta");
-open(WRITE,"_TMR.fasta");
+open(fasta, "er_98.fasta");
+open(WRITE,">er_TMR.fasta");
 
 $, = ",";
 $\ = "\n";
@@ -10,9 +10,9 @@ while(<fasta>){
 
 	if($_ =~ /^>/){
 		$temp = substr($_,0,100);
-		printf WRITE $temp;
+		printf WRITE $temp."\n";
 	}
-	else{
+	elsif($_ =~ /^M/){
 		$SEQUENCE=substr($_,0,10000);
 		@sq=split(//,$SEQUENCE);
 
@@ -95,14 +95,19 @@ while(<fasta>){
 			}
 		}
 
-		# for($i=$max-25;$i<=$max+25;$i++){
-		# 	if($i<=0 || $i>=@sq){
-		# 		printf WRITE "X";
-		# 	}
-		# 	else{
-		# 		printf WRITE $sq[$i],",";
-		# 	}
-		# }
+		@sq=split(//,$SEQUENCE);
+
+		for($i=$max-25;$i<=$max+25;$i++){
+			if($i<=0 || $i>=@sq){
+				printf WRITE "X,";
+			}
+			else{
+				printf WRITE $sq[$i].",";
+			}
+		}
+
+		printf WRITE "\n";
 
 	}
+}
 print chr(7);	#終了時に音が鳴ります
