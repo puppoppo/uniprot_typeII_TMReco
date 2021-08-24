@@ -1,4 +1,5 @@
 
+
 open(SWISS, "uniprot_sprot.dat");
 open(WRITE,">0.csv");
 
